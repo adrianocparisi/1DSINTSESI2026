@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos Sistemas Operacionais - 1DSINTSESI2026</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #e0e0e0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #3498db;
+        }
+
+        .icon-container {
+            background-color: #ecf0f1;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .icon-container svg {
+            width: 40px;
+            height: 40px;
+            fill: #95a5a6;
+        }
+
+        .name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Alunos Sistemas Operacionais - 1DSINTSESI2026</h1>
+
+        <div class="album-grid" id="album">
+        </div>
+    </div>
+
+    <script>
+        const alunos = [
+            "Henrique", "Lucas", "Luan", "Pedro Barbosa", "Isabela",
+            "Maryane", "Raquel", "Sofia", "Helena", "Marcella",
+            "Miguel", "Júlia", "Letícia", "Mariana", "João", "Pedro Antunes"
+        ];
+
+
+        const album = document.getElementById('album');
+
+        // Ícone SVG padrão
+        const userIcon = `
+        <div class="icon-container">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        </div>`;
+
+        // Gerar os cards dinamicamente
+        alunos.forEach(aluno => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `${userIcon}<div class="name">${aluno}</div>`;
+            album.appendChild(card);
+        });
+    </script>
+
+</body>
+
+</html>
