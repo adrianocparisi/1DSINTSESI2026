@@ -87,7 +87,7 @@
         const alunos = [
             "Henrique", "Lucas", "Luan", "Pedro Barbosa", "Isabela",
             "Maryane", "Raquel", "Sofia", "Helena", "Marcella",
-            "Miguel", "Júlia", "Letícia", "Mariana", "João", "Pedro Antunes"
+            "Miguel", "Júlia", "Letícia", "Mariana", "João", "Pedro Antunes", "Adriano"
         ];
 
 
@@ -102,8 +102,9 @@
         // Gerar os cards dinamicamente
         alunos.forEach(aluno => {
             const card = document.createElement('div');
+            let url_aluno = aluno.toLowerCase().replace(" ", "_").normalize('NFD').replace(/[\u0300-\u036f]/g, "");
             card.className = 'card';
-            card.innerHTML = `${userIcon}<div class="name">${aluno}</div>`;
+            card.innerHTML = `<a href="${url_aluno}.html" target="_blank">${userIcon}<div class="name">${aluno}</div></a>`;
             album.appendChild(card);
         });
     </script>
